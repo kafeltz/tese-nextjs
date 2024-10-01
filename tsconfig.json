@@ -1,3 +1,4 @@
+// https://www.totaltypescript.com/tsconfig-cheat-sheet?ck_subscriber_id=2773682090
 {
   "compilerOptions": {
     "allowJs": true,
@@ -11,9 +12,12 @@
       "dom.iterable",
       "esnext"
     ],
-    "module": "esnext",
+    "module": "Preserve", // (or "Preserve")  // Every other "module" option is wrong
+    "moduleDetection": "force", // No accidental global scripts
     "moduleResolution": "bundler",
     "noEmit": true,
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true, // Make indexing stricter
     "paths": {
       "@/*": [
         "./src/*"
@@ -27,10 +31,11 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "es5",
+    "target": "es2022",
     "types": [
       "@testing-library/jest-dom"
-    ]
+    ],
+    "verbatimModuleSyntax": true // Enforced 'type-only' imports
   },
   "exclude": [
     "node_modules"
